@@ -1,0 +1,14 @@
+<h1> Create User </h1>
+
+<% unless locals.empty? %>
+  <%= message %>
+<% end %>
+
+
+<form method="post" action="/signup">
+ <h4>Name- <input type="text" name="username"></h4>
+ <h4>Email- <input type="text" name="email"></h4>
+ <h4>Password- <input type="text" name="username"></h4>
+
+ <input type="submit" class="btn btn-primary">
+ </form>
