@@ -1,7 +1,6 @@
-<h1>Edit Your Tweet, Millenial</h1>
+<h1>Create a new Tweet as @<%= current_user.username %></h1>
 
-<form method="post" action="/tweets/<%= @tweets.id %>">
-<input id="hidden" type="hidden" name="_method" value="PATCH">
-<h3>Status: <input type="text" name="content" id="content"></h3>
-<input type="submit" value="submit">
+<form action="/tweets" method="post">
+  <input type="text" name="content" id="content" >
+  <input type="submit" value="Tweet!" id="submit">
 </form>

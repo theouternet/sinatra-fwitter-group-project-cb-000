@@ -1,0 +1,6 @@
+<h1>@<%= @user.username %> Tweets</h1>
+
+
+<% @user.tweets.each do |tweet| %>
+    <p><a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a></p>
+<% end %>

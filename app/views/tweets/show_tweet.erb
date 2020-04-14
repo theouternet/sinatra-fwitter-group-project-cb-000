@@ -1,5 +1,11 @@
-<h1>Here's Your Tweet, Millenial</h1>
+<h1><a href="/users/<%= @tweet.user.slug %>">@<%= @tweet.user.username %></a> Tweet Detail</h1>
 
-<%= @tweet.content %>
+<p><%= @tweet.content %></p>
 
+<% if @tweet.user_id == current_user.id %>
+    <a class="button" href="/tweets/<%= @tweet.id %>/edit" value="Edit Tweet">Edit Tweet</a>
+    <form method="post" action="/tweets/<%= @tweet.id %>" style="display: inline;">
+        <input id="hidden" type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete Tweet" class="button" id="Delete Tweet">
+    </form>
 <% end %>

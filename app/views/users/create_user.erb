@@ -1,14 +1,10 @@
-<h1> Create User </h1>
+<h1>signup a/k/a create_user.erb</h1>
+<h1>Create Fwitter User</h1>
+method="post" action="/signup"
 
-<% unless locals.empty? %>
-  <%= message %>
-<% end %>
-
-
-<form method="post" action="/signup">
- <h4>Name- <input type="text" name="username"></h4>
- <h4>Email- <input type="text" name="email"></h4>
- <h4>Password- <input type="text" name="username"></h4>
-
- <input type="submit" class="btn btn-primary">
- </form>
+<form action="/signup" method="POST">
+  <input type="text" name="username" id="username" placeholder="Username">
+  <input type="password" name="password" id="password" placeholder="Password">
+  <input type="text" name="email" id="email" placeholder="Email">
+  <input type="submit" value="Sign Up">
+</form>
