@@ -1,21 +1,4 @@
-<% @current_user = current_user%>
-<h1>Welcome, <%= @current_user.username %></h1>
-
-<% Tweet.all.each do |tweet| %>
-<div class="card border-secondary mb-3" style="max-width: 20rem;">
-	<div class="card-header"><%= tweet.user.username %></div>
-	<div class="card-body">
-		<p class="card-text">
-			<%= tweet.content %>
-			<br>
-			<% if current_user.id == tweet.user_id %>
-				<a href="/tweets/<%= tweet.id %>/edit"><span class="badge badge-primary">Edit</span></a>
-			<% end %>
-		</p>
-	</div>
-</div>
-<% end %>
-
+  
 <form action="/logout" method="post">
   Logout?
   <input type="submit" name="logout" >

@@ -2,14 +2,50 @@
 <html>
   <head>
     <title>Fwitter</title>
+    <style type="text/css">
+      body {
+        font-family: Helvetica, sans-serif;
+        color: #484848;
+        line-height: 1.3em;
+      }
+      .button {
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+      }
+      a:link {
+        color: #484848;
+        text-decoration: none;
+      }
+      a:visited {
+        color: #484848;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #484848;
+        text-decoration: underline;
+      }
+      a:active {
+        color: #484848;
+        text-decoration: underline;
+      }
+      h4 {
+        margin-bottom: 0;
+      }
+      hr {padding: 5px, 0, 5px, 0;}
+  </style>
   </head>
   <body>
 
-    <div class="container">
-      <h1>Welcome, Welcome to Fwitter!</h1>
-      <h2>This is located in layout.erb!</h2>
-      <h2>Don't forget to <strong>yield</strong> your views!</h2>
-    </div>
-
+    <%= yield %>
+    <br>
+    <% if logged_in? %>
+      <div style="padding-top: 20px;">
+      <a href="/tweets/new" class="button">Create Tweet</a>
+      <a href="/tweets" class="button">All Tweets</a>
+      <a href="/logout" class="button">Log Out</a>
+      </div>
+    <% end %>
   </body>
 </html>

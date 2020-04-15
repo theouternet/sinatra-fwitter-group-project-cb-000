@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   def slug
     self.username.downcase.gsub("&","and").gsub(" ","-").gsub(/[^a-z\-\d]/,"")
+  
   end
 
   def self.find_by_slug(slug)
